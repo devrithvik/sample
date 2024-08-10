@@ -10,8 +10,8 @@ app.use(cors({
 }))
 
  
-app.get("/",(req,res) => {
-    res.json("youhave visited the home page")
+app.use("/",(req,res) => {
+    res.send("server is running")
 })
 app.get("/api",(req,res) => {
     res.send("eve variables"+process.env.varvar)
