@@ -10,7 +10,7 @@ app.use(cors({
 }))
 
  
-app.use("/api",(req,res) => {
+app.get("/api",(req,res) => {
     res.send("eve variables"+process.env.varvar)
 })
 
