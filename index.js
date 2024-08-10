@@ -4,11 +4,15 @@ require("dotenv").config()
 const app = express();
 app.use(express.json())
 app.use(cors({
-    origin: ["localhost:5173"],
-    // origin: "*",
+    // origin: ["localhost:5173"],
+    origin: "*",
     Credentials: true,
 }))
 
+app.use("/*",(req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin : *')
+    res.setHeader('Access-Control-Allow-Methods : POST , OPTIONS , GET , DELETE , PUT')
+})
 app.use("/api",(req,res) => {
     res.send("eve variables"+process.env.varvar)
 })
