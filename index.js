@@ -10,8 +10,9 @@ app.use(cors({
 }))
 
  
-app.use("/",(req,res) => {
-    res.send("server is running")
+app.use("/",(req,res,next) => {
+    res.pingdata = "server is running"
+    next()
 })
 app.get("/api",(req,res) => {
     res.send("eve variables"+process.env.varvar)
