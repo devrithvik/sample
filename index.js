@@ -6,7 +6,7 @@ app.use(express.json())
 app.use(cors({
     // origin: ["localhost:5173"],
     origin: "*",
-    Credentials: true,
+    credentials: true,
 }))
 
  
